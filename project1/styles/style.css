@@ -1,0 +1,38 @@
+html {
+  background-color: gray;
+}
+
+h1 {
+text-align: center;
+color: purple;
+font-size: 55px;
+}
+img {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 500px;
+   height: 300px;
+   margin-top: -50px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+}
+.play {
+   position: absolute;
+   top: 20%;
+   left: 45%;
+   background-color: pink;
+}
+.previous {
+   position: relative;
+   top: 25%;
+   left: 40%;
+}
+.next {
+  position: relative;
+  top: 25%;
+  left: 45%;
+}
+.capital1 {
+  position: relative;
+  top: 40%;
+}
