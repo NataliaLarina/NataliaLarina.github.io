@@ -3,10 +3,58 @@
   <head>
     <meta charset="utf-8">
     <title>My Project1 Game!!!!!!!!!</title>
-    <link rel="stylesheet" href="styles/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="styles/style.css" charset="utf-8">
   </head>
   <body>
-    <h1><em>Around The World</em></h1>
+<!-- <h1><em>Around The World</em></h1> -->
+    <!-- containers hold rows which hold column(s) -->
+    <div class="container">
+      <div class="row">
+        <div class="three columns">
+         <h4>Correct: <span class="correct"></span></h4>
+        </div>
+        <div class="three columns">
+          <h4>Wrong: <span class="wrong"></span></h4>
+        </div>
+        <div class="three columns">
+          <h4>Score: <span class="score"></span></h4>
+        </div>
+        <div class="three columns">
+          <h4>Timer: <span class="timer"></span></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <p class="country"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <div class="answers">
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <button class="play">Let's Play!!!</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <button class="previous">Previous</button>
+          <button class="next">Next</button>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
     <!-- <img style="-webkit-user-select: none; cursor: zoom-in;" src="http://hitraveltales.com/wp-content/uploads/2016/02/world-map-large.jpg" width="530" height="257"> -->
 
     <section id="animation-station">
@@ -14,20 +62,6 @@
        <img src="cartoon-plane-clipart-1.jpg" alt="airplane">
      </section>
 
-
-    <button class="play">Let's Play!!!</button>
-    <div class="country"></div>
-    <button class="previous">Previous</button>
-    <button class="next">Next</button>
-
-    <div class="correct"></div>
-    <div class="wrong"></div>
-    <div class="score"></div>
-
-
-    <div class="answers">
-      ...
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="scripts/animations.js"></script>

@@ -86,10 +86,10 @@ function Country(name, capital) {
       }
       else  {
         wrongboard()
-    
+
         console.log('the else statement hit')
       }
-
+    }, false);
 
     return button;
 }
@@ -104,7 +104,7 @@ function Country(name, capital) {
       // $('<button class="sharedClass" id='+[i]+'>' + randomCountry().capital + '</button>').on('click', function(){
       //   console.log('my button is working')
       // });
-      answerArray.push($('<button class="sharedClass" id='+[i]+'>' + randomCountry().capital + '</button>'))
+      answerArray.push(createButton(randomCountry().capital))
     }
 
     return appendArray()
@@ -153,16 +153,7 @@ function appendArray(){
 //     wrong +=1
 //   })
 // }))
-$('.sharedClass').click(function(){
-  console.log('my button is working la la la');
-  if ($(this).text() === compare(myCountries)){
-    score +=1
-    correct +=1
-  }
-  else  {
-    wrong +=1
-  }
-})
+
 
 
 // $('#2').click(function ({
@@ -206,20 +197,48 @@ $('.sharedClass').click(function(){
 
 function scoreboard(){
   score++
+  $('.score').text(score)
 }
 
 function correctboard(){
   correct++
+  $('.correct').text(correct)
 }
 
 function wrongboard(){
   wrong++
+  $('.wrong').text(wrong)
 }
 
-//timer?? doesnt work!!!
-function createCountDown(timeRemaining) {
-    var startTime = Date.now();
-    return function() {
-       return timeRemaining - ( Date.now() - startTime );
-    }
-}
+// start timer - https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval
+// var timeLeft = 60;
+// var oneSecondInMilliseconds = secondsToMilliseconds(1);
+// // not used; just for conversion reference
+// function secondsToMilliseconds(time) {
+//   return time * 1000;
+// }
+// function everySecond() {
+//   function(evt) {
+//     timeLeft--;
+//     if (timeLeft === 0 || timeLeft <= 0) {
+//       clearInterval(timer);
+//     } else {
+//       // otherwise
+//     }
+//     console.log(timeLeft);
+//   }
+// }
+//setInterval(function, howLongBetweenFuntionCalls)
+// var timer = setInterval(everySecond, oneSecondInMilliseconds);
+// end timer
+
+
+// function nextCountry() {
+//   if $('.next').click(function(){
+//     randomCountry();
+//   })
+// }
+//
+// function previousCountry() {
+//
+// }
