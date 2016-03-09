@@ -1,5 +1,5 @@
 html {
-  background-color: gray;
+  background-color: white;
 }
 
 h1 {
@@ -21,6 +21,9 @@ img {
    top: 20%;
    left: 45%;
    background-color: pink;
+   height: 40px;
+   width: 90px;
+   font-size: 25;
 }
 .previous {
    position: relative;
@@ -35,4 +38,14 @@ img {
 .capital1 {
   position: relative;
   top: 40%;
+}
+
+img {
+  height: 80px;
+  width: 160px;
+}
+
+html {
+  background: url(../world-map-large.jpg);
+  background-size: cover;
 }
