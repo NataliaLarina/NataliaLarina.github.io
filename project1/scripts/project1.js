@@ -21,7 +21,7 @@ function Country(name, capital) {
 function createButton(country) {
   console.log('createButton');
   var button = document.createElement("button");
-  button.innerHTML = country.name;
+  button.innerHTML = country;
   button.addEventListener("click", function(){
     console.log('btn is working')
     if ($(this).text() === compare(myCountries)){
@@ -71,13 +71,14 @@ function randomCountry() {
 function appendArray(element){
   console.log('appendArray');
   answerArray = [];
+  var countryAnswerArray = [];
   for (var i = 0; i < 5; i++) {
     var randomCtry = randomCountry();
-    answerArray.push(createButton(randomCapital()));
+    countryAnswerArray.push(randomCtry);
+    answerArray.push(createButton(randomCtry.capital));
   }
-
   var myArray = shuffleArray(answerArray);
-
+  $('.country').text(countryAnswerArray[0].name);
   for (var i = 0; i < 4; i++){
     $(element).append(myArray[i]);
   }
@@ -85,17 +86,21 @@ function appendArray(element){
   return answerArray;
 }//end of appendArray
 
+
 function randomCapital() {
   console.log('randomCapital');
   var capitalSelected = myCountries[Math.floor(Math.random() * myCountries.length)];
   console.log(capitalSelected)
-  return capitalSelected;
+  return capitalSelected.capital;
 };//end of randomCapital
 
 function scoreboard(){
   console.log('scoreboard()');
-  score++
+  score++;
   $('.score').text(score)
+  $('.country').empty()
+  $('.answers').empty();
+  appendArray($('.answers'));
 }//end of scoreboard
 
 function correctboard(){
@@ -132,29 +137,6 @@ function countryChosen(){
 
 
 
-// TIMER: SOON
-// start timer - https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval
-// var timeLeft = 60;
-// var oneSecondInMilliseconds = secondsToMilliseconds(1);
-// // not used; just for conversion reference
-// function secondsToMilliseconds(time) {
-//   return time * 1000;
-// }
-// function everySecond() {
-//   function(evt) {
-//     timeLeft--;
-//     if (timeLeft === 0 || timeLeft <= 0) {
-//       clearInterval(timer);
-//     } else {
-//       // otherwise
-//     }
-//     console.log(timeLeft);
-//   }
-// }
-//setInterval(function, howLongBetweenFuntionCalls)
-// var timer = setInterval(everySecond, oneSecondInMilliseconds);
-// end timer
-
 
 
 //beginning of document, when the page loads, what information is ready to use
@@ -184,23 +166,13 @@ $(document).ready(function(){
     //will start
     $('.play').click(function(){
       console.log('.play click');
-      //when let's play is clicked:
-      //empty out country p/ make sure it is empty before the start of the game
+      
       $('.country').empty()
-      //if it is empty console.log empty
-      var newCountry = randomCountry();
-      //gives new country on the screen
-      $('.country').text(newCountry.name);
-      //give new array of answers here:
 
       $('.answers').empty();
       appendArray($('.answers'));
-      //answerArray.push(appendArray(answerArray));
       console.log("answerArray")
 
-
-      // return appendArray()
-      // console.log("appendArray");
     });
 
     // next.click
@@ -209,10 +181,12 @@ $(document).ready(function(){
     //gives new country on the screen
       $('.country').empty();
       console.log('empty');
-      var newCountry = randomCountry();
-      $('.country').text(newCountry.name);
+      // var newCountry = randomCountry();
+      // $('.country').text(newCountry.name);
       //give new array of answers
-      //???????????????????????
+      $('.answers').empty();
+      appendArray($('.answers'));
+      console.log("answerArray");
     });
 
 
