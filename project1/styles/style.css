@@ -416,31 +416,41 @@ text-align: center;
 color: purple;
 font-size: 55px;
 }
+h4 {
+color: purple;
+font-size: 30px;
+background-color: pink;
+}
 img {
    position: absolute;
-   top: 50%;
+   top: 180px;
    left: 50%;
    width: 500px;
    height: 300px;
-   margin-top: -10px; /* Half the height -50px*/
-   margin-left: -600px; /* Half the width -250px*/
+   margin-top: -100px; /* Half the height -50px*/
+   margin-left: -500px; /* Half the width -250px*/
 }
 .play {
    background-color: pink;
-   font-size: 25;
+   color: purple;
+   font-size: 50;
    display: block;
    width: 300px;
    margin: auto;
+   text-align: center;
 }
 .previous {
+   color: purple;
    position: relative;
    top: 25%;
-   left: 40%;
+   left: 35%;
+
 }
 .next {
+  color: purple;
   position: relative;
   top: 25%;
-  left: 45%;
+  left: 40%;
 }
 .capital1 {
   position: relative;
@@ -464,19 +474,22 @@ html {
   float: left;
   top: 35%;
   left: 35%;
-  font-size: 50;
+  font-size: 40px;
   height: 80px;
   width: 150px;
   font-weight: bold;
-  font-size: 30px;
   color: purple;
 }
 .answers {
-
   position: relative;
   float: left;
+  left: 22%;
   top: 55%;
-  left: 38%;
+  color: purple;
+  font-size: 20px
+  font-weight: bold;
+  /*background-color: #FF00FF;*/
+
 }
 .previous {
   display: block;
