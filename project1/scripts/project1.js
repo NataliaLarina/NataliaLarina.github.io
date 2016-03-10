@@ -8,9 +8,6 @@ var score = 0; //total score for the game
 var correct = 0;// correct guessed answers
 var wrong = 0; // wrong guessed answers
 var round = 0; //how many questions in one game
-// var answersContainer;
-// var playCount = 30;
-
 
 function gameEnd() {
   alert('Game over. Your score is ' + score);
@@ -139,10 +136,6 @@ function countryChosen(){
   return $('.country').text();
 }//end of countryChosen
 
-
-
-
-
 //beginning of document, when the page loads, what information is ready to use
 $(document).ready(function(){
   console.log('document.ready');
@@ -203,15 +196,11 @@ $(document).ready(function(){
     //gives new country on the screen
       $('.country').empty();
       console.log('empty');
-      // var newCountry = randomCountry();
-      // $('.country').text(newCountry.name);
-      //give new array of answers
+     //give new array of answers
       $('.answers').empty();
       appendArray($('.answers'));
       console.log("answerArray");
     });
-
-
 
   }); // ajax.done is finished
 }); // end document.ready
