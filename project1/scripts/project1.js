@@ -11,6 +11,10 @@ var round = 0; //how many questions in one game
 // var answersContainer;
 // var playCount = 30;
 
+
+function gameEnd() {
+  alert('Game over. Your score is ' + score);
+}
 //constructor for each country
 function Country(name, capital) {
     console.log('new Country()');
@@ -166,13 +170,31 @@ $(document).ready(function(){
     //will start
     $('.play').click(function(){
       console.log('.play click');
-      
       $('.country').empty()
-
       $('.answers').empty();
       appendArray($('.answers'));
       console.log("answerArray")
 
+
+      // start timer - https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval
+      var timeLeft = 60;
+      var oneSecondInMilliseconds = secondsToMilliseconds(1);
+      // not used; just for conversion reference
+      function secondsToMilliseconds(time) {
+        return time * 1000;
+      }
+      function everySecond() {
+          timeLeft--;
+          if (timeLeft === 0 || timeLeft <= 0) {
+            clearInterval(timer);
+            gameEnd();
+          } else {
+            // otherwise
+          }
+          $('.timer').html(timeLeft);
+          console.log(timeLeft);
+        }
+      var timer = setInterval(everySecond, oneSecondInMilliseconds);
     });
 
     // next.click
